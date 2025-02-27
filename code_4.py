@@ -18,7 +18,7 @@ def get_the_cheapest_big_mac_price_by_year(year):
     filtered_df = df[df['date'].str.startswith(str(year))]
     if not filtered_df.empty:
         cheapest = filtered_df.loc[filtered_df['dollar_price'].idxmin()]
-        return f"{cheapest['name']} ({cheapest['iso_a3']}): ${round(cheapest['dollar_price'],2)}"
+        return f"{cheapest['name']} ({cheapest['iso_a3']}): ${round(cheapest['dollar_price'], 2)}"
     return None
 
 def get_the_most_expensive_big_mac_price_by_year(year):
@@ -26,7 +26,7 @@ def get_the_most_expensive_big_mac_price_by_year(year):
     filtered_df = df[df['date'].str.startswith(str(year))]
     if not filtered_df.empty:
         expensive = filtered_df.loc[filtered_df['dollar_price'].idxmax()]
-        return f"{expensive['name']} ({expensive['iso_a3']}): ${round(expensive['dollar_price'],2)}"
+        return f"{expensive['name']} ({expensive['iso_a3']}): ${round(expensive['dollar_price'], 2)}"
     return None
 
 if __name__ == "__main__":
