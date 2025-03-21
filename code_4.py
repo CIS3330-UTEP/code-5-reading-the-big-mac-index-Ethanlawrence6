@@ -5,7 +5,7 @@ df["date"] = pd.to_datetime(df["date"])
 df["year"] = df["date"].dt.year
 
 def get_big_mac_price_by_year(year, country_code):
-    filtered = df[(df["year"] == year) & (df['iso_a3'].str.lower() == country_code.lower())]
+    filtered = df[(df["year"] == year) & (df['iso_a3'].str.lower() == country_code.lower())]  # Witten with the help/reference of AI/Co-Pilot
     mean_price = filtered['dollar_price'].mean()
     return round(mean_price, 2)
 
